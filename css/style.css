@@ -1,0 +1,731 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+/* система построения отступов */
+
+/*font-family: 'PT Serif', serif; */
+/* шрифты находим в гугл */
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.container {
+  max-width: 1230px;
+  /* ширину посчитали по картинкам */
+  padding: 0 15px;
+  margin: 0 auto;
+  /* margin чтобы все выравнять */
+}
+
+.header {
+  text-align: center;
+}
+
+.header__logo {
+  padding: 88px 0 60px;
+}
+
+.menu {
+  border-top: 2px solid #c4c4c4;
+  /* бордер это линия */
+}
+.menu__list {
+  display: flex;
+  justify-content: center;
+  /* в одну линию ,по центру */
+}
+
+.menu__list-item {
+  width: 300px;
+}
+.menu__list-link {
+  font-size: 24px;
+  line-height: 28px;
+  color: #888888;
+  text-decoration: none;
+  /* убирает подчеркивание стандартное у ссылок */
+  display: block;
+  padding: 34px 10px 38px;
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  transition: all 0.3s;
+}
+.menu__list-link--active,
+.menu__list-link:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+.menu__list-item:first-child {
+  border-left: 1px solid #c4c4c4;
+  /* делаем линию сбоку слева у первой ссылки */
+}
+
+.menu__list-item:last-child {
+  border-right: 1px solid #c4c4c4;
+  /* делаем линию сбоку слева у последней ссылки */
+}
+
+.slider__item {
+  /* background-image: url(../images/slider-item.jpg); */
+  /* прописали в html(читать коменты там) */
+  min-height: 600px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.slick-arrow {
+  border: none;
+  /* убираем линию */
+  outline: none;
+  background-color: transparent;
+  /* делаем прозрачный фон */
+  position: absolute;
+  /* в самом слике прописано уже position: relative */
+  top: 50%;
+  /* делаем отступ для каждоый стрелочки */
+  z-index: 5;
+  /* поднимаем наверх левую стрелку */
+  cursor: pointer;
+  transform: translateY(-50%);
+  /* немного подняли стрелочки */
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slick-prev {
+  left: 20px;
+}
+
+.search__iner {
+  padding: 60px 0 70px;
+}
+
+.search__form {
+  display: flex;
+  justify-content: center;
+  /* в одну линию ,по центру все элементы */
+  align-items: center;
+  /* все в центр */
+}
+
+.search__form-label {
+  color: #888888;
+  font-size: 24px;
+  line-height: 24px;
+  margin-right: 69px;
+  width: 155px;
+  /* можно в тексте сделать /br 
+    Пример: Поиск/br аппартаментов */
+}
+
+.search__form-input {
+  padding-left: 0 15px;
+  height: 70px;
+  border: 2px solid #c4c4c4;
+  width: 430px;
+  color: #888888;
+  font-size: 18px;
+}
+
+.search__form-input::placeholder {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #888888;
+}
+
+.search__form-btn {
+  border: none;
+  background-color: #c4c4c4;
+  color: #ffffff;
+  padding: 22px 24px 21px 36px;
+  font-size: 23px;
+  cursor: pointer;
+  position: relative;
+}
+
+.search__form-btn::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/search-item.svg);
+  top: 26px;
+  left: 9px;
+}
+
+.popular {
+  text-align: center;
+}
+
+.popular__tittle {
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 64px;
+  font-size: 48px;
+  font-family: "PT Serif", serif;
+  padding: 18px;
+  font-weight: 400;
+}
+
+.popular__iner {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 0;
+  /* в одну линию ,по центру все элементы */
+  flex-wrap: wrap;
+}
+
+.popular__img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* даже если зальют новую картинку она придет к 
+    требуемым стандартам */
+}
+
+.popular__item-tittle {
+  font-size: 24px;
+  line-height: 24px;
+  color: #888888;
+  padding: 30px 10px;
+  font-weight: 400;
+}
+
+.popular__link {
+  background-color: #888888;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 13px 51px;
+}
+
+.reason {
+  padding: 100px 0;
+}
+
+.reason__iner {
+  display: flex;
+  justify-content: space-between;
+  /* в одну линию ,по центру все элементы */
+}
+
+.reason__item {
+  width: 470px;
+}
+
+.reason__title {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+  /* это отступ до другого блока/между блоками */
+  padding-left: 136px;
+  /* pading это отступ внутри блока,136 =(103-сторона картинки
+    +33-расстояние до текста) */
+  position: relative;
+}
+
+.reason__title::before {
+  content: "";
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  left: 0;
+  top: 0;
+}
+
+.reason__title--icon-1::before {
+  background-image: url(../images/clock-icon.png);
+}
+
+.reason__title--icon-2::before {
+  background-image: url(../images/world-icon.png);
+}
+
+.reason__text {
+  margin-bottom: 45px;
+}
+
+.reason__link {
+  color: #888888;
+  padding-left: 36px;
+  /* отступ для картинки(стрелки) */
+  position: relative;
+}
+
+.reason__link::before {
+  content: "";
+  background-image: url(../images/arrow-black.svg);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -4px;
+  left: 0;
+}
+
+.bestHouse {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  text-align: right;
+  /* вся высота монитора(в его зависимости,когда картинка
+    занимает вю область */
+}
+
+.best__tittle {
+  font-family: "PT Serif", serif;
+  color: #ffffff;
+  font-size: 48px;
+  line-height: 48px;
+  padding-top: 68px;
+  max-width: 455px;
+  font-weight: 400;
+  /* это значит font-weight:normal; */
+
+  padding-bottom: 15px;
+  margin-left: auto;
+
+  /* изменили для подгона текста */
+  /* c margin  и padding можно поиграться */
+}
+
+.bestHouse-link {
+  background-color: black;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 16px 18px;
+
+  display: inline-block;
+  /* чтобы правила отступов применились к тексту */
+}
+
+.about {
+  background-color: black;
+  padding: 100px 0;
+  color: #ffffff;
+}
+
+/* .about ul{
+    list-style: none;
+}  это прописано в reset.css*/
+
+.about__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.our-managers {
+  width: 297px;
+}
+.about__title {
+  margin-bottom: 47px;
+  font-family: "PT Serif", serif;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.our-managers__title {
+  margin-bottom: 27px;
+}
+
+.our-managers__items {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.our-managers__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* делаем круглой картинку */
+  object-fit: cover;
+  /* Смещаемый контент меняет свой размер таким образом, чтобы сохранять 
+    свои пропорции при заполнении блока: */
+  margin-bottom: 22px;
+}
+
+.our-managers__list {
+  line-height: 21px;
+  margin-bottom: 43px;
+}
+
+.our-managers__btn {
+  border: none;
+  padding: 16px 21px;
+  color: #000000;
+  background-color: #ffffff;
+  line-height: 18px;
+}
+
+.blog {
+  width: 411px;
+  height: 401px;
+}
+.blog__link {
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 18px;
+  margin-bottom: 28px;
+  padding-left: 67px;
+  /* отступ вместе со стрелкой */
+  display: inline-block;
+  /* придать строчным элементам блочные св-ва */
+  position: relative;
+}
+
+.blog__link::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/arrow-white.svg);
+  left: 0;
+  width: 30px;
+  height: 30px;
+  top: -4px;
+}
+.reviews {
+  width: 300px;
+}
+
+.reviews__img {
+  width: 300px;
+  height: 127px;
+  object-fit: cover;
+}
+.reviews__text {
+  font-style: 18px;
+  line-height: 21px;
+  margin: 22px 0;
+}
+
+.reviews__link {
+  background-color: #ffffff;
+  color: black;
+  text-decoration: none;
+  padding: 16px 28px;
+  display: inline-block;
+}
+
+.footer__top {
+  padding: 100px 0;
+  background-color: #000000;
+  color: #ffffff;
+}
+.footer__top-iner {
+  display: flex;
+  align-items: center;
+}
+.footer__menu-list {
+  list-style: none;
+  /* убирает маркеры в списке */
+  width: 250px;
+  /* ширину увеличили для текста на всякий случай */
+  margin-right: 50px;
+}
+
+.footer__menu-link {
+  font-size: 24px;
+  line-height: 36px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer__form-label {
+  line-height: 18px;
+  color: #888888;
+  margin-right: 10px;
+}
+.footer__form {
+  display: flex;
+  align-items: center;
+}
+.footer__form-input {
+  display: block;
+  width: 511px;
+  height: 71px;
+  border: none;
+  background-color: #ffffff;
+  color: #888888;
+  padding: 0 15px;
+  /* падинг с двух сторон , на всякий случай */
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  /* несмотря на то что некоторые из свойств прописаны в
+    родителях для формы нужно задать еще раз,
+    так как у формы свои свойства */
+}
+
+.footer__form-input::placeholder {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #888888;
+  /* дублируем для placeholder */
+}
+.footer__form-btn {
+  background-color: #888888;
+  color: #ffffff;
+  padding: 25px 34px;
+  border: none;
+}
+.footer__logo {
+  padding: 3px 0 23px;
+  text-align: center;
+}
+
+@media (max-width: 1220px){
+.popular__item{
+  width: 50%;
+  margin-bottom: 50px;
+}
+.popular__img{
+  width: 400px;
+  height: 400px;
+}
+.bestHouse{
+  min-height: 80vh;
+  /* уменьшили размер картинки */
+}
+}
+
+
+@media (max-width: 1140px){
+.about__inner{
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.blog{
+  margin-left: 150px;
+}
+
+.reviews{
+  width: 100%;
+  margin-top: 50px;
+}
+
+}
+
+
+@media (max-width: 992px){
+  /* правило применяется для дисплееев шириной меньше чем указано(992) */
+  .search__form{
+    flex-wrap: wrap;
+    /* когда у элементов не будет хватать места они будут 
+    перепрыгивать на новую строчку */
+  }
+  .search__form-label{
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }.popular__img{
+    width: 280px;
+    height: 280px;
+
+}
+.reason__iner{
+  flex-wrap: wrap;
+}
+.reason__item{
+  width: 100%;
+  margin-bottom: 50px;
+}
+.reason__title{
+  min-height: 50px;
+  /* сделали небольшой отступ */
+  padding-left: 60px;
+}
+.reason__title::before{
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+
+  transform: translateY(50%);
+  /* центрируем */
+}
+
+.bestHouse{
+  min-height: 600px;
+  /* уменьшили размер картинки */
+}
+  
+.footer__top-iner{
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+  
+
+}
+.footer__menu-list{
+  width: 100%;
+  margin-bottom: 50px;
+  margin-right: 0;
+  text-align: center;
+}
+
+}
+
+
+@media (max-width: 900px){
+  .about__inner{
+    display: block;
+  }
+  .our-managers{
+    margin: 0 auto;
+  }
+  .blog{
+    margin: 50px auto;
+    max-width: 420px;
+    width: auto;
+    /* текст будет переносится */
+  }
+.reviews{
+  margin: 0 auto;
+  /* чтобы центрировать */
+  max-width: 420px;
+  
+}
+.footer__form{
+  flex-direction: column;
+}
+.footer__form-label{
+  text-align: center;
+  margin-bottom: 15px;
+  margin-right: 0;
+  
+}
+.footer__form-input{
+  margin-bottom: 15px;
+  text-align: center;
+  width: 300px;
+
+}
+}
+
+@media (max-width: 768px) {
+  .header__logo {
+    padding: 40px 0 30px;
+  }
+  .logo__link-img {
+    max-width: 250px;
+  }
+  .menu__list-link {
+    padding: 24px 10px 28px;
+  }
+  .slider__item{
+      min-width: 400px;
+  }
+  .popular__item{
+    width: 100%;
+}
+.bestHouse{
+  min-height: 400px;
+}
+.popular__iner,.reason,.about,.footer__top{
+  padding: 50px 0;
+}
+}
+
+
+@media (max-width: 600px) {
+  .menu__list {
+    display: block;
+    border-bottom: 1px solid #c4c4c4;
+  }
+  .menu__list-item {
+    border-top: 1px solid #c4c4c4;
+    width: 100%;
+  }
+  .menu__list-item:first-child,
+  .menu__list-item:last-child {
+    border-right: none;
+    border-left: none;
+  }
+  .menu__list-link {
+    padding: 20px 10px 20px;
+
+  }
+  .search__form-input{
+    width: 65%;
+  }
+  .search__form{
+    padding: 0 10px;
+  }
+  .popular__tittle {
+   
+    line-height: 42px;
+    font-size: 36px;
+  }
+  .best__tittle {
+   
+    font-size: 34px;
+    line-height: 29px;
+  }
+  .about__title {
+    font-size: 30px;
+    line-height: 15px;
+}
+}
+
+@media (max-width: 440px){
+  .search__form-input{
+    width: 100%;
+  }
+
+.search__form-btn{
+  width:100%;
+      padding: 13px 18px 13px 18px;
+}
+.search__form-btn::before{
+  display: none;
+}
+
+.reviews {
+  margin-top: 100px;
+  
+}
+}
+
+@media (max-width: 440px){
+
+  .slick-arrow{
+  display: none; 
+}
+}
+
+
+@media (max-width: 400px){
+.slider{
+  display: none;
+}
+
+}
+@media (max-width: 360px){
+.reason__title{
+  font-size: 24px;
+    line-height: 28px;
+}
+
+
+}
